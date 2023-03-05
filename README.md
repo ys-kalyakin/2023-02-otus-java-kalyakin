@@ -1,1 +1,5 @@
-# 2023-02-otus-java-kalyakin
+## Калякин Юрий
+## Java Developer. Professional 02-2023
+
+## Задания
+[hw01-gradle](./hw01-gradle)
