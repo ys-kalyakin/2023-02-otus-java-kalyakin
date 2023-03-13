@@ -3,3 +3,4 @@
 
 ## Задания
 [hw01-gradle](./hw01-gradle)
+[hw02-generics](./hw02-generics)

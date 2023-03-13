@@ -1,9 +1,11 @@
 import org.gradle.plugins.ide.idea.model.IdeaLanguageLevel
 import org.gradle.api.plugins.JavaPluginExtension
+import org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
 
 plugins {
     idea
     id("io.spring.dependency-management")
+    id("org.springframework.boot") apply false
 }
 
 idea {
@@ -28,10 +30,15 @@ allprojects {
     apply(plugin = "io.spring.dependency-management")
     dependencyManagement {
         dependencies {
+            imports {
+                mavenBom(BOM_COORDINATES)
+            }
             dependency("com.google.guava:guava:$guava")
         }
     }
+}
 
+subprojects {
     tasks.withType<JavaCompile> {
         options.encoding = "UTF-8"
         options.compilerArgs.addAll(listOf("-Xlint:all,-serial,-processing", "-Werror"))
@@ -52,3 +59,4 @@ allprojects {
         targetCompatibility = JavaVersion.VERSION_17
     }
 }
+
