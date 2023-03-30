@@ -1,9 +1,14 @@
-package ru.otus.annotations;
+package ru.otus.annotations.tests;
 
-public class DemoTest2 {
+import ru.otus.annotations.After;
+import ru.otus.annotations.Before;
+import ru.otus.annotations.Test;
+
+public class DemoTestBeforeFail {
     @Before
-    /* private */ public void init() {
+    public void init() {
         System.out.println(this.getClass().getName() + ":before");
+        throw new RuntimeException();
     }
 
     @Test
@@ -12,7 +17,7 @@ public class DemoTest2 {
     }
 
     @After
-    public void tearDown() {
+    public void after() {
         System.out.println(this.getClass().getName() + ":after");
     }
 }

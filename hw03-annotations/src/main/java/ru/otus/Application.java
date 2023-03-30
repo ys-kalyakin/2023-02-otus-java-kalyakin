@@ -1,8 +1,8 @@
 package ru.otus;
 
-import ru.otus.annotations.DemoTest1;
-import ru.otus.annotations.DemoTest2;
-import ru.otus.annotations.DemoTestBeforeFail;
+import ru.otus.annotations.tests.DemoTest1;
+import ru.otus.annotations.tests.DemoTest2;
+import ru.otus.annotations.tests.DemoTestBeforeFail;
 import ru.otus.annotations.TestRunner;
 
 import java.util.List;
