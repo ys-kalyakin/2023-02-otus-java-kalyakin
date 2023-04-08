@@ -34,6 +34,7 @@ allprojects {
                 mavenBom(BOM_COORDINATES)
             }
             dependency("com.google.guava:guava:$guava")
+            dependency("org.ow2.asm:asm-commons:9.2")
         }
     }
 }
