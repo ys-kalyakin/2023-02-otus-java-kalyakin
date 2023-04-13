@@ -5,6 +5,7 @@ import org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
 plugins {
     idea
     id("io.spring.dependency-management")
+    id("io.freefair.lombok")
     id("org.springframework.boot") apply false
 }
 
@@ -59,5 +60,6 @@ subprojects {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+    apply(plugin = "io.freefair.lombok")
 }
 
