@@ -1,6 +1,7 @@
 package ru.otus.bytecode;
 
 import ru.otus.bytecode.annotation.Log;
+import ru.otus.bytecode.proxy.LogCache;
 import ru.otus.bytecode.proxy.LoggingInvocationHandler;
 
 import java.lang.reflect.Proxy;
@@ -12,7 +13,7 @@ public class TestLogging implements TestLoggingInterface {
      * @return новый инстанс класса
      */
     public static TestLoggingInterface newInstance() {
-        var invocationHandler = new LoggingInvocationHandler(new TestLogging());
+        var invocationHandler = new LoggingInvocationHandler(new TestLogging(), LogCache.INSTANCE);
         return (TestLoggingInterface) Proxy.newProxyInstance(
                 TestLogging.class.getClassLoader(),
                 new Class<?>[] {TestLoggingInterface.class},
