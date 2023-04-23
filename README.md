@@ -10,3 +10,4 @@
 | 4     | [hw04-gc](./hw04-gc)                   |
 | 5     | [hw05-bytecode](./hw05-bytecode)       |
 | 6     | [hw06-oop](./hw06-oop)                 |
+| 7     | [hw07-patterns](./hw07-patterns)       |
