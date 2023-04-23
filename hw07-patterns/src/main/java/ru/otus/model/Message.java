@@ -110,7 +110,7 @@ public class Message implements Copyable<Message> {
 
     @Override
     public Message copy() {
-        return toBuilder().field13(this.field13.copy()).build();
+        return toBuilder().field13(this.field13 == null ? null : this.field13.copy()).build();
     }
 
     @Override
