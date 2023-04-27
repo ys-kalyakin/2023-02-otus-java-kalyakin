@@ -7,6 +7,7 @@ include("hw04-gc")
 include("hw05-bytecode")
 include("hw06-oop")
 include("hw07-patterns")
+include("hw08-serialization")
 
 pluginManagement {
     val johnrengelmanShadow: String by settings
