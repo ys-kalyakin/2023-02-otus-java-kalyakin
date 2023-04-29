@@ -36,6 +36,9 @@ allprojects {
             }
             dependency("com.google.guava:guava:$guava")
             dependency("org.ow2.asm:asm-commons:9.2")
+            dependency("com.google.protobuf:protobuf-java-util:3.22.3")
+            dependency("org.glassfish:jakarta.json:2.0.1")
+            dependency("javax.json:javax.json-api:1.1.4")
         }
     }
 }
