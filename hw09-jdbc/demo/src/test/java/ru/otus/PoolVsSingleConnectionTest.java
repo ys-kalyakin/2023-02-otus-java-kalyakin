@@ -47,6 +47,7 @@ class PoolVsSingleConnectionTest {
         long before = System.currentTimeMillis();
 
         try (Connection connection = getConnection(usePool)) {
+            connection.setAutoCommit(false);
         }
 
         logger.info("usePool: {}, after getting connection, time:{}", usePool, (System.currentTimeMillis() - before));
