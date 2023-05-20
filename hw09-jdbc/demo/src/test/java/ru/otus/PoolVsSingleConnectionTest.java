@@ -37,6 +37,7 @@ class PoolVsSingleConnectionTest {
     @DisplayName(" выполняем sql-запрос")
     @ParameterizedTest(name = " с использованием connection Pool: {0}")
     @ValueSource(booleans = {false, true})
+    @SuppressWarnings("unused")
     void doSelect(boolean usePool) throws SQLException {
         if (usePool) {
             makeConnectionPool();
