@@ -8,7 +8,9 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Метаданные класса сущности
@@ -17,6 +19,7 @@ import java.util.Objects;
  */
 @AllArgsConstructor
 public class EntityClassMetaDataImpl<T> implements EntityClassMetaData<T> {
+    private final static Map<Class<?>, List<Field>> FIELDS_CACHE = new ConcurrentHashMap<>();
     private final Class<T> entityClass;
 
 
@@ -41,16 +44,18 @@ public class EntityClassMetaDataImpl<T> implements EntityClassMetaData<T> {
 
     @Override
     public List<Field> getAllFields() {
-        return Arrays.stream(PropertyUtils.getPropertyDescriptors(entityClass))
-                .map(p -> {
-                    try {
-                        return entityClass.getDeclaredField(p.getName());
-                    } catch (Exception e) {
-                        return null;
-                    }
-                })
-                .filter(Objects::nonNull)
-                .toList();
+        return FIELDS_CACHE.computeIfAbsent(entityClass, clazz -> {
+            return Arrays.stream(PropertyUtils.getPropertyDescriptors(clazz))
+                    .map(p -> {
+                        try {
+                            return clazz.getDeclaredField(p.getName());
+                        } catch (Exception e) {
+                            return null;
+                        }
+                    })
+                    .filter(Objects::nonNull)
+                    .toList();
+        });
     }
 
     @Override
