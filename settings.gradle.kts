@@ -8,6 +8,8 @@ include("hw05-bytecode")
 include("hw06-oop")
 include("hw07-patterns")
 include("hw08-serialization")
+include("hw09-jdbc:demo")
+include("hw09-jdbc:homework")
 
 pluginManagement {
     val johnrengelmanShadow: String by settings
