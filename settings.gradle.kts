@@ -11,6 +11,7 @@ include("hw08-serialization")
 include("hw09-jdbc:demo")
 include("hw09-jdbc:homework")
 include("hw10-jpql")
+include("hw11-cache")
 
 pluginManagement {
     val johnrengelmanShadow: String by settings
