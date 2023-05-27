@@ -12,7 +12,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "phone")
-public class Phone {
+public class Phone implements Cloneable {
     @Id
     @SequenceGenerator(name = "phone_gen", sequenceName = "phone_seq",
             initialValue = 1, allocationSize = 1)
@@ -29,5 +29,10 @@ public class Phone {
     public Phone(Long id, String number) {
         this.id = id;
         this.number = number;
+    }
+
+    @Override
+    public Phone clone() {
+        return new Phone(id, number, client);
     }
 }

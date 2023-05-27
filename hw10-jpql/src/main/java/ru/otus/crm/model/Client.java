@@ -8,6 +8,7 @@ import lombok.Setter;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -43,14 +44,17 @@ public class Client implements Cloneable {
     public Client(Long id, String name, Address address, List<Phone> phones) {
         this.id = id;
         this.name = name;
-        this.address = address;
-        this.phones = phones;
 
         if (address != null) {
+            this.address = address.clone();
             this.address.setClient(this);
         }
         if (phones != null) {
-            this.phones.forEach(p -> p.setClient(this));
+            this.phones = new ArrayList<>();
+            phones.forEach(p -> {
+                var phone = p.clone();
+                phone.setClient(this);
+            });
         }
     }
 
