@@ -13,3 +13,4 @@
 | 7     | [hw07-patterns](./hw07-patterns)                  |
 | 8     | [hw08-serialization](./hw08-serialization)        |
 | 9     | [hw09-jdbc](./hw09-jdbc)                          |
+| 10    | [hw10-jpql](./hw10-jpql)                          |
