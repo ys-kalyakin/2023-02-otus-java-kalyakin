@@ -33,7 +33,7 @@ public class Client implements Cloneable {
 
     @Column(name = "phones")
     @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @Fetch(FetchMode.SUBSELECT)
+    @Fetch(FetchMode.JOIN)
     private List<Phone> phones;
 
     public Client(String name) {
