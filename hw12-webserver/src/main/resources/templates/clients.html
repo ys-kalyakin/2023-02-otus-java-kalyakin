@@ -1,0 +1,47 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Клиенты</title>
+    <script>
+        function addClient() {
+            window.location = "/add_client"
+        }
+    </script>
+</head>
+
+<body>
+<button onclick="addClient()">Добавить клиента</button>
+
+<h4>Список пользователей</h4>
+<table style="width: 400px">
+    <thead>
+        <tr>
+            <td style="width: 50px">Id</td>
+            <td style="width: 150px">Имя</td>
+            <td style="width: 100px">Адрес</td>
+            <td style="width: 100px">Телефоны</td>
+        </tr>
+    </thead>
+    <tbody>
+        <#list client_list as client>
+        <tr>
+            <td>${client.id}</td>
+            <td>${client.name}</td>
+            <td>
+                <#if client.address??>
+                ${client.address.street}
+                </#if>
+            </td>
+            <td>
+                <#if client.phones??>
+                    <#list client.phones as phone>
+                        ${phone.number},
+                    </#list>
+                </#if>
+            </td>
+        </tr>
+        </#list>
+    </tbody>
+</table>
+
+</body>
+</html>
