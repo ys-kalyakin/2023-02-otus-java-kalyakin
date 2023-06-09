@@ -32,7 +32,7 @@ public class Client implements Cloneable {
     private Address address;
 
     @Column(name = "phones")
-    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @Fetch(FetchMode.JOIN)
     private List<Phone> phones;
 
@@ -51,10 +51,11 @@ public class Client implements Cloneable {
         }
         if (phones != null) {
             this.phones = new ArrayList<>();
-            phones.forEach(p -> {
+            for (var p : phones) {
                 var phone = p.clone();
                 phone.setClient(this);
-            });
+                this.phones.add(phone);
+            }
         }
     }
 
