@@ -16,8 +16,9 @@ public class AppComponentsContainerImpl implements AppComponentsContainer {
     private final Map<String, Object> appComponentsByName = new HashMap<>();
 
     public AppComponentsContainerImpl(Class<?>...initialConfigClass) {
-        for (var config : initialConfigClass)
+        for (var config : initialConfigClass) {
             checkConfigClass(config);
+        }
 
         Arrays.stream(initialConfigClass)
                 .sorted(Comparator.comparing(config -> config.getAnnotation(AppComponentsContainerConfig.class).order()))
@@ -43,8 +44,7 @@ public class AppComponentsContainerImpl implements AppComponentsContainer {
             throw e;
         }
         catch (Exception e) {
-            System.err.println("Ошибка обработки конфигурации: " + e);
-            return Collections.emptyList();
+            throw new RuntimeException(e);
         }
     }
 
