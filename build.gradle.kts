@@ -42,6 +42,7 @@ allprojects {
             dependency("org.glassfish:jakarta.json:2.0.1")
             dependency("javax.json:javax.json-api:1.1.4")
             dependency("commons-beanutils:commons-beanutils:1.9.4")
+            dependency("org.reflections:reflections:0.10.2")
         }
     }
 }
