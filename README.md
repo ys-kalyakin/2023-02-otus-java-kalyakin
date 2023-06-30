@@ -17,3 +17,4 @@
 | 11    | [hw11-cache](./hw11-cache)                        |
 | 12    | [hw12-webserver](./hw12-webserver)                |
 | 13    | [hw13-ioc](./hw13-ioc)                            |
+| 14    | [hw14-spring-data](./hw14-spring-data)            |

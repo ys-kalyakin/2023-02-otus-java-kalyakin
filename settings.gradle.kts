@@ -14,6 +14,7 @@ include("hw10-jpql")
 include("hw11-cache")
 include("hw12-webserver")
 include("hw13-ioc")
+include("hw14-spring-data")
 
 pluginManagement {
     val johnrengelmanShadow: String by settings
