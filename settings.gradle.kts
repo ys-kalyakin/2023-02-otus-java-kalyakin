@@ -15,6 +15,7 @@ include("hw11-cache")
 include("hw12-webserver")
 include("hw13-ioc")
 include("hw14-spring-data")
+include("hw15-concurrent-collections")
 
 pluginManagement {
     val johnrengelmanShadow: String by settings
