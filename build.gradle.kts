@@ -29,6 +29,7 @@ allprojects {
 
     val guava: String by project
     val testcontainersBom: String by project
+    val grpc: String by project
     apply(plugin = "io.spring.dependency-management")
     dependencyManagement {
         dependencies {
@@ -43,6 +44,9 @@ allprojects {
             dependency("javax.json:javax.json-api:1.1.4")
             dependency("commons-beanutils:commons-beanutils:1.9.4")
             dependency("org.reflections:reflections:0.10.2")
+            dependency("io.grpc:grpc-netty:$grpc")
+            dependency("io.grpc:grpc-protobuf:$grpc")
+            dependency("io.grpc:grpc-stub:$grpc")
         }
     }
 }

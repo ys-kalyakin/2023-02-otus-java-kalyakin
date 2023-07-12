@@ -15,17 +15,20 @@ include("hw11-cache")
 include("hw12-webserver")
 include("hw13-ioc")
 include("hw14-spring-data")
+include("hw16-grpc")
 
 pluginManagement {
     val johnrengelmanShadow: String by settings
     val dependencyManagement: String by settings
     val springframeworkBoot: String by settings
     val lombok: String by settings
+    val protobufVer: String by settings
 
     plugins {
         id("io.spring.dependency-management") version dependencyManagement
         id("com.github.johnrengelman.shadow") version johnrengelmanShadow
         id("org.springframework.boot") version springframeworkBoot
         id("io.freefair.lombok") version lombok
+        id("com.google.protobuf") version protobufVer
     }
 }
