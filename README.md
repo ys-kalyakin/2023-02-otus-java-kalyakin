@@ -19,3 +19,4 @@
 | 13    | [hw13-ioc](./hw13-ioc)                                       |
 | 14    | [hw14-spring-data](./hw14-spring-data)                       |
 | 15    | [hw15-concurrent-collections](./hw15-concurrent-collections) |
+| 16    | [hw16-grpc](./hw16-gprc)                                     |
