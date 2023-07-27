@@ -18,6 +18,8 @@ include("hw14-spring-data")
 include("hw15-concurrent-collections")
 include("hw16-grpc")
 include("hw17-executors")
+include("hw18-webflux:client-service")
+include("hw18-webflux:datastore-service")
 
 pluginManagement {
     val johnrengelmanShadow: String by settings
